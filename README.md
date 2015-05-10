@@ -10,6 +10,7 @@ This docker image runs a supervised codebox nodejs server that provides a WebIDE
 - Supervisord process manager keeps codebox server alive in case of a crash
 - Ability to provision container w/ ssh keys on runtime (useful for pulling/pushing to github from within the container)
    - *Note:* Only passphraseless keys can be added automatically to the ssh-agent
+- Includes [additional themes](https://github.com/linc01n/codebox-theme)  
 
 ## Managing & running the container
 

@@ -17,6 +17,17 @@ RUN apt-get update && \
     apt-get -y install git python-software-properties python g++ make software-properties-common && \
     npm install -g codebox --no-bin-link --unsafe-perm
 
+# Install ruby, build additional codebox themes, cleanup up
+RUN apt-get install -y ruby  && \
+    gem install bundler && \
+    git clone https://github.com/linc01n/codebox-theme.git /var/codebox-theme && \
+    cd /var/codebox-theme && \
+    bundle install && \ 
+    ruby generate_theme.rb && \
+    mv ./ported-theme/* /usr/local/lib/node_modules/codebox/addons/ && \    
+    apt-get remove -y ruby && \
+    rm -rf /var/codebox-theme
+    
 # Expose php application folder
 ENV APP_ROOT /var/www
 VOLUME ${APP_ROOT}
