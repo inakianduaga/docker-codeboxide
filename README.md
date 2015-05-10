@@ -3,7 +3,7 @@ Codebox IDE
 
 > Dockerized codebox IDE server for editing on the cloud
 
-This docker image runs a supervised codebox nodejs server that provides a WebIDE for cloud development
+This docker image runs a supervised [codebox](https://github.com/CodeboxIDE) nodejs server that provides a WebIDE for cloud development
 
 ## Features:
 
